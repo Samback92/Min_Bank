@@ -13,39 +13,36 @@ public class App {
             do {
 
             System.out.println("vad vill du göra?: ");
-            System.out.println("(1) ta ut pengar");
-            System.out.println("(2) sätta in pengar");
-            System.out.println("(3) kolla saldo");
-            System.out.println("(4) avsluta");
+            System.out.println("(1) - Kolla saldo -");
+            System.out.println("(2) - sätta in pengar -");
+            System.out.println("(3) - Ta ut pengar -");
+            System.out.println("(4) - Avsluta -");
             val = input.nextInt();
             switch(val){
                 
                 case 1 :
 
-                    System.out.println("***Uttag***");
-                    System.out.println("Skriv in en summa:");
-                    summan = input.nextInt();
-                    bank.uttag(summan);
-                    System.out.println("*********************");
+                    System.out.println("***Kolla saldo***");
                     System.out.println("Ditt saldo är: " + bank.visaSaldo());
+                    System.out.println("*********************");
                     break;
 
-                
                 case 2 :
 
                     System.out.println("***Insättning***");
-                    System.out.println("Skriv in en summa:");
+                    System.out.println("Skriv in en summa att sätta in:");
                     summan = input.nextInt();
                     bank.insattning(summan);
                     System.out.println("*********************");
-                    System.out.println("Ditt saldo är: " + bank.visaSaldo());
                     break;
 
                
                 case 3 :
 
-                    System.out.println("***Kolla saldo***");
-                    System.out.println("Ditt saldo är: " + bank.visaSaldo());
+                    System.out.println("***Uttag***");
+                    System.out.println("Skriv in en summa:");
+                    summan = input.nextInt();
+                    bank.uttag(summan);
                     System.out.println("*********************");
                     break;
 
@@ -57,7 +54,7 @@ public class App {
                 default :
 
                     System.out.println("***Fel val! Välj mellan alternativen***.");
-                    break;
+                    
 
                 } 
                 }while (val != 4);

@@ -1,24 +1,35 @@
 import java.util.Scanner;
 
+
 public class App {
     public static void main(String[] args) {
         bankJava bank = new bankJava();
         Scanner input = new Scanner(System.in);
-        int val;
         int summan;
-    
-        
+        boolean run = true;
+        int menyVal = 0;
 
-
-            do {
+        while (run) {
 
             System.out.println("vad vill du göra?: ");
             System.out.println("(1) - Kolla saldo -");
             System.out.println("(2) - sätta in pengar -");
             System.out.println("(3) - Ta ut pengar -");
             System.out.println("(4) - Avsluta -");
-            val = input.nextInt();
-            switch(val){
+            if (input.hasNextInt()) {
+                menyVal = input.nextInt();
+                if (menyVal <= 0 || menyVal > 4) {
+                    System.out.println("Välj ett alt. mellan 1 och 4!");
+                } 
+            } else {
+                System.out.println("Nu blev det väl fel va?");
+                input.nextLine();
+            }
+            
+        
+                
+
+            switch(menyVal){
                 
                 case 1 :
 
@@ -36,7 +47,6 @@ public class App {
                     System.out.println("*********************");
                     break;
 
-               
                 case 3 :
 
                     System.out.println("***Uttag***");
@@ -53,14 +63,8 @@ public class App {
 
                 default :
 
-                    System.out.println("***Fel val! Välj mellan alternativen***.");
-                    
-
-                } 
-                }while (val != 4);
-                
-            
-
-            input.close();  
+                    System.out.println("***Välj mellan alternativen***.");
+            } 
+        } input.close();  
     }
 }
